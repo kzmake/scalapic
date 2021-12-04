@@ -35,6 +35,7 @@ object Settings {
       Jackson.scala,
       Eff.core,
       Cats.core,
+      ULID.core,
       ScalaTest.core % Test
     )
   )

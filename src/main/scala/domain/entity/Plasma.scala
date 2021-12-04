@@ -2,6 +2,7 @@ package domain.entity
 
 import domain.entity._
 import domain.vo._
+import com.chatwork.scala.ulid.ULID
 
 import scala.util.Random
 
@@ -14,14 +15,7 @@ final case class Plasma(
     j: Field
 ) extends Entity[PlasmaId]
 object Plasma {
-  implicit def genParticleId = () =>
-    ({
-      var n = 0L
-      () => {
-        n += 1
-        ParticleId.apply(n.toString())
-      }
-    })()
+  implicit def genParticleId = () => ParticleId.apply(ULID.generate().asString)
 
   def apply(n: Int, q: Charge, m: Mass, x: Int, y: Int, z: Int): Plasma = {
     val r = new Random()

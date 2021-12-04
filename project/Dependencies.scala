@@ -55,3 +55,8 @@ object ScalaTest {
   val version = "3.2.10"
   val core    = "org.scalatest" %% "scalatest" % version
 }
+
+object ULID {
+  val version = "1.0.24"
+  val core    = "com.chatwork" %% "scala-ulid" % version
+}
