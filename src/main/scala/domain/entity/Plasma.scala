@@ -14,17 +14,20 @@ final case class Plasma(
     j: Field
 ) extends Entity[PlasmaId]
 object Plasma {
-  implicit def genParticleId = () => {
-    var n = 0L
-    n = n + 1
-    ParticleId.apply(n.toString())
-  }
+  implicit def genParticleId = () =>
+    ({
+      var n = 0L
+      () => {
+        n += 1
+        ParticleId.apply(n.toString())
+      }
+    })()
 
   def apply(n: Int, q: Charge, m: Mass, x: Int, y: Int, z: Int): Plasma = {
     val r = new Random()
 
     new Plasma(
-      PlasmaId("2"),
+      PlasmaId("1"),
       Vector.fill(n)(
         Particle.apply(
           Charge(q.value),
