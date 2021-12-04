@@ -1,9 +1,24 @@
 import sbt._
 
-object Breeze {
-  val version = "2.0"
-  val core    = "org.scalanlp" %% "breeze"     % version
-  val viz     = "org.scalanlp" %% "breeze-viz" % version
+object GoogleApiGrpc {
+  val version = "2.6.0"
+  val common  = "com.google.api.grpc" % "proto-google-common-protos" % version
+}
+
+object Akka {
+  val version           = "2.6.16"
+  val actorTyped        = "com.typesafe.akka" %% "akka-actor-typed"         % version
+  val stream            = "com.typesafe.akka" %% "akka-stream"              % version
+  val discovery         = "com.typesafe.akka" %% "akka-discovery"           % version
+  val pki               = "com.typesafe.akka" %% "akka-pki"                 % version
+  val actorTestkitTyped = "com.typesafe.akka" %% "akka-actor-testkit-typed" % version
+  val streamTestkit     = "com.typesafe.akka" %% "akka-stream-testkit"      % version
+}
+
+object AkkaHttp {
+  val version      = "10.2.6"
+  val http         = "com.typesafe.akka" %% "akka-http"          % version
+  val http2Support = "com.typesafe.akka" %% "akka-http2-support" % version
 }
 
 object Logback {

@@ -29,8 +29,6 @@ object Settings {
       // "-Ywarn-unused-import"
     ),
     libraryDependencies ++= Seq(
-      Breeze.core,
-      Breeze.viz,
       ScalaLogging.core,
       Logback.classic,
       Logstash.logbackEncoder,
@@ -38,6 +36,24 @@ object Settings {
       Eff.core,
       Cats.core,
       ScalaTest.core % Test
+    )
+  )
+  val protoSettings: Def.SettingsDefinition = Seq(
+    libraryDependencies ++= Seq(
+      GoogleApiGrpc.common % "protobuf-src" intransitive ()
+    )
+  )
+
+  val akkaSettings: Def.SettingsDefinition = Seq(
+    libraryDependencies ++= Seq(
+      AkkaHttp.http,
+      AkkaHttp.http2Support,
+      Akka.actorTyped,
+      Akka.stream,
+      Akka.discovery,
+      Akka.pki,
+      Akka.actorTestkitTyped % Test,
+      Akka.streamTestkit     % Test
     )
   )
 }
