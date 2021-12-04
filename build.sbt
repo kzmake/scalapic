@@ -18,9 +18,21 @@ Docker / dockerRepository   := Some("ghcr.io/kzmake")
 Docker / maintainer         := "kzmake <kamake.i3a@gmail.com>"
 Docker / dockerExposedPorts := List(50051)
 
+lazy val api = (project in file("api"))
+  .settings(
+    name := s"${projectName}-api"
+  )
+  .enablePlugins(AkkaGrpcPlugin)
+  .settings(protoSettings)
+  .settings(
+    Compile / PB.protoSources += file("api/scalapic")
+  )
+
 lazy val root = (project in file("."))
   .settings(
     name := projectName
   )
   .enablePlugins(JavaAppPackaging)
-  .settings(coreSettings)
+  .settings(coreSettings, akkaSettings, protoSettings)
+  .dependsOn(api)
+  .aggregate(api)
