@@ -7,7 +7,6 @@ import domain.entity._
 import domain.vo._
 import usecase.port._
 import usecase.business._
-
 import scala.concurrent.ExecutionContext
 
 class SimulatePlasmasInteractor()(implicit
