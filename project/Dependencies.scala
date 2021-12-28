@@ -60,3 +60,18 @@ object ULID {
   val version = "1.0.24"
   val core    = "com.chatwork" %% "scala-ulid" % version
 }
+
+object UUID7s {
+  val version = "0.1.2"
+  val core    = "io.github.kzmake" %% "uuid7s" % version
+}
+
+object Scallop {
+  val version = "4.1.0"
+  val core    = "org.rogach" %% "scallop" % version
+}
+
+object Shapeless {
+  val version = "2.3.3"
+  val core    = "com.chuusai" %% "shapeless" % version
+}

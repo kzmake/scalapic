@@ -36,12 +36,10 @@ object Settings {
       Eff.core,
       Cats.core,
       ULID.core,
+      UUID7s.core,
+      Shapeless.core,
+      Scallop.core,
       ScalaTest.core % Test
-    )
-  )
-  val protoSettings: Def.SettingsDefinition = Seq(
-    libraryDependencies ++= Seq(
-      GoogleApiGrpc.common % "protobuf-src" intransitive ()
     )
   )
 
